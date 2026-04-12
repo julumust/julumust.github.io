@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=max-width, initial-scale=1.0" />
   <title>Your Name</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --bg: #fff; --text: #111; --muted: #555; --link: #1a0dab; }
-    [data-theme="dark"] { --bg: #111; --text: #e8e8e8; --muted: #999; --link: #8ab4f8; }
+    html, body { width: 100%; overflow-x: hidden; }
+    :root { --bg: #f4edcf; --text: #01030d; --muted: #100902; --link: #3a1c03; }
+    [data-theme="dark"] { --bg: #100902; --text: #edecde; --muted: #edecde; --link: #f4edcf; }
     body { background: var(--bg); color: var(--text); transition: background 0.15s, color 0.15s; }
     .site { max-width: 640px; margin: 0 auto; padding: 3rem 1.5rem 6rem; }
-    nav { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; }
+    nav { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3rem; flex-wrap: wrap; gap: 0.5rem; }
     .nav-left { display: flex; align-items: baseline; gap: 1.25rem; }
-    nav a { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); text-decoration: none; }
+    nav a { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif,  Times, serif, BlinkMacSystemFont, sans-serif; font-size: 20px; font-weight: 600; color: var(--text); text-decoration: none;}
     nav .archive { font-weight: 400; color: var(--muted); }
     nav .archive:hover { color: var(--text); }
-    .toggle { background: none; border: none; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; color: var(--muted); padding: 0; }
+    .toggle { background: none; border: none; cursor: pointer; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 16px; color: var(--muted); padding: 0; }
     .toggle:hover { color: var(--text); }
     .bio { font-family: Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 1.75; color: var(--text); margin-bottom: 2.5rem; }
     .bio a { color: var(--link); text-decoration: none; }
@@ -23,67 +24,63 @@
     .more-toggle { color: var(--muted); cursor: pointer; }
     #bio-extra { display: none; }
     section { margin-bottom: 2.5rem; }
-    section h2 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 0.6rem; }
+    section h2 { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 0.6rem; }
     section a { display: block; font-family: Georgia, 'Times New Roman', serif; font-size: 15px; color: var(--link); text-decoration: none; margin-bottom: 0.35rem; line-height: 1.5; }
     section a:hover { text-decoration: underline; }
     .item-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.35rem; }
     .item-row a { margin-bottom: 0; }
-    .item-year { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; color: var(--muted); white-space: nowrap; }
+    .item-year { font-family: Georgia, 'Times New Roman', Times, serif; font-size: 15px; color: var(--muted); white-space: nowrap; }
+    @media (max-width: 480px) {
+      .site { padding: 2rem 1rem 4rem; }
+      nav { margin-bottom: 2rem; }
+    }
   </style>
 </head>
 <body data-theme="light">
   <div class="site">
     <nav>
       <div class="nav-left">
-        <a href="/">Your Name</a>
-        <a class="archive" href="/archive">Archive</a>
+        <a href="/">Vinicius Dias</a>
       </div>
       <button class="toggle" id="toggle">Dark</button>
     </nav>
-
+ 
     <p class="bio">
-      Your Name is the [title] at <a href="#">Your Company</a>, a [one-line description of what it does].
-      <span id="bio-short">... <span class="more-toggle" onclick="document.getElementById('bio-extra').style.display='inline';document.getElementById('bio-short').style.display='none';">More</span></span><span id="bio-extra"> Previously, they worked at [Previous Company] where they led [work]. Before that, they studied [field] at [University].</span>
+      I am researcher at <a href="#">LTS Research</a>, previously at the University of Nottingham. I was duly admitted to the degree of Master of Engineering in Aerospace Engineering.
     </p>
-
+ 
     <section>
-      <h2>Essays</h2>
-      <a href="#">Your first essay title here</a>
-      <a href="#">Another essay or long-form piece</a>
+      <h2>Books</h2>
+      <a href="https://doi.org/10.1093/oso/9780198538493.001.0001">Neural Networks for Pattern Recognition</a>
+      <a href="https://hastie.su.domains/ElemStatLearn/">The Elements of Statistical Learning</a>
+      <a href="https://www.penguin.co.uk/books/461432/the-infinity-machine-by-mallaby-sebastian/9780241703564">The Infinity Machine</a>
     </section>
-
+ 
     <section>
       <h2>Short posts</h2>
-      <a href="#">A thought or short post</a>
-      <a href="#">Another short post</a>
+      <a href="https://christofkoch.com/wp-content/uploads/2014/01/cr-panpsychism-jan-14.pdf">Ubiquitous Minds</a>
+      <a href="https://www.tinybluedotfoundation.org/research/perception-box">Perception Box: A Detailed Explanation</a>
     </section>
-
+ 
     <section>
-      <h2>Research</h2>
-      <a href="https://scholar.google.com">Google Scholar</a>
-    </section>
-
-    <section>
-      <h2>Op-eds</h2>
+      <h2>Articles</h2>
       <div class="item-row">
-        <a href="#">Article title (Publication)</a>
-        <span class="item-year">2025</span>
-      </div>
-    </section>
-
-    <section>
-      <h2>Interviews</h2>
-      <div class="item-row">
-        <a href="#">Podcast or interview title</a>
+        <a href="https://doi.org/10.48550/arXiv.2507.02092">Energy-Based Transformers are Scalable Learners and Thinkers</a>
         <span class="item-year">2025</span>
       </div>
       <div class="item-row">
-        <a href="#">Another interview</a>
-        <span class="item-year">2024</span>
+        <a href="https://homepages.inf.ed.ac.uk/pseries/pdfs/ChalkSeitzSeries_JOV2010.pdf">Rapidly learned stimulus expectations alter perception of motion</a>
+        <span class="item-year">2010</span>
       </div>
     </section>
+
+    <section>
+      <h2>Projects</h2>
+      <a href="https://github.com/julumust">GitHub</a>
+    </section>
+
   </div>
-
+ 
   <script>
     const toggle = document.getElementById('toggle');
     const saved = localStorage.getItem('theme') ||
