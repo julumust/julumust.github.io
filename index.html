@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&display=swap" rel="stylesheet"/>
+  <meta name="theme-color" content="#f4edcf" id="theme-color"/>
   <title>Vinicius Dias</title>
   <script>
     (function () {
@@ -16,12 +17,16 @@
       document.documentElement.setAttribute('data-theme', saved);
     })();
   </script>
+  <script>
+    window.THEME_COLORS = { light: '#f4edcf', dark: '#100902' };
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { width: 100%; overflow-x: clip; }
-    :root { --bg: #f4edcf; --text: #01030d; --muted: #100902; --link: #3a1c03; --icon: #321a00; --hicon: #ffa45eb9; --toggle: #2e2c2c; --rule: rgba(0,0,0,0.22); }
-    [data-theme="dark"] { --bg: #100902; --text: #edecde; --muted: #edecde; --link: #f4edcf; --icon: #fffcd1; --hicon: #fffff0; --toggle: #f8f8f8; --rule: rgba(255,255,255,0.22); }
+    :root { color-scheme: light; --bg: #f4edcf; --text: #01030d; --muted: #100902; --link: #3a1c03; --icon: #321a00; --hicon: #ffa45eb9; --toggle: #2e2c2c; --rule: rgba(0,0,0,0.22); }
+    [data-theme="dark"] { color-scheme: dark; --bg: #100902; --text: #edecde; --muted: #edecde; --link: #f4edcf; --icon: #fffcd1; --hicon: #fffff0; --toggle: #f8f8f8; --rule: rgba(255,255,255,0.22); }
 
+    html { background: var(--bg); transition: background 0.4s ease; }
     body { background: var(--bg); color: var(--text); transition: background 0.4s ease, color 0.4s ease; }
     .site { max-width: 640px; margin: 0 auto; padding: 0 1.5rem 6rem; }
 
@@ -165,11 +170,17 @@
   <script>
     const toggle = document.getElementById('toggle');
     const root = document.documentElement;
+    const themeMeta = document.getElementById('theme-color');
+    const setMeta = (theme) => themeMeta && themeMeta.setAttribute('content', window.THEME_COLORS[theme]);
+
     toggle.setAttribute('aria-pressed', root.getAttribute('data-theme') === 'dark');
+    setMeta(root.getAttribute('data-theme'));
+
     toggle.addEventListener('click', () => {
       const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       root.setAttribute('data-theme', next);
       toggle.setAttribute('aria-pressed', next === 'dark');
+      setMeta(next);
       localStorage.setItem('theme', next);
     });
   </script>
