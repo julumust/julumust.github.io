@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f4edcf"/>
+
+  <text x="600" y="395"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="320" font-weight="500" font-style="italic"
+        text-anchor="middle" fill="#01030d">V</text>
+
+  <line x1="450" y1="440" x2="750" y2="440"
+        stroke="#01030d" stroke-opacity="0.2" stroke-width="1.5"/>
+
+  <text x="600" y="500"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="48" font-weight="400" font-style="italic"
+        text-anchor="middle" fill="#01030d">Vinicius Dias</text>
+
+  <text x="600" y="545"
+        font-family="-apple-system, 'Helvetica Neue', Arial, sans-serif"
+        font-size="22" font-weight="400" letter-spacing="0.05em"
+        text-anchor="middle" fill="#01030d" fill-opacity="0.6">researcher · LTS Research</text>
+</svg>
